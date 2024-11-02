@@ -1,0 +1,61 @@
+.header {
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: $THEME_BG_BLACK;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  z-index: 998;
+  border-bottom: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+
+  .input {
+    display: flex;
+    max-width: 560px;
+    align-items: center;
+    margin-top: 4px;
+    background-color: $WHITE;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%) !important;
+    background-color: $THEME_BG_BLACK;
+
+    &__icon {
+      color: $THEME_TEXT_TERTIARY !important;
+      padding: 0 16px;
+    }
+
+    & .disabled_input {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    &__field {
+      width: 460px;
+      height: 48px;
+      border: unset;
+      border-radius: 8px;
+      font-size: 18px;
+      padding: 16px;
+      padding-left: 0;
+      color: $THEME_TEXT_TERTIARY;
+
+      &::placeholder {
+        color: $THEME_TEXT_TERTIARY;
+      }
+    }
+
+    &__disabled {
+      cursor: not-allowed;
+      background-color: $LIGHT_BLUE_PRIMARY;
+    }
+  }
+  .loading__text {
+    font-size: 16px;
+    font-weight: 500;
+    color: $WHITE;
+    margin-left: 12px;
+  }
+}

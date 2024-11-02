@@ -1,0 +1,246 @@
+.header {
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: $THEME_BG_BLACK;
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  z-index: 998;
+  border-bottom: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+
+  .header__button {
+    cursor: pointer;
+    padding: 8px;
+  }
+}
+
+.detail-post {
+  max-width: 1020px;
+  min-height: calc(100vh - 64px);
+  margin: 0 auto;
+  margin-top: 64px;
+  padding: 0 32px;
+  background-color: $THEME_BG_BLACK;
+  border: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 60%);
+  border-top: unset;
+  border-bottom: unset;
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__image {
+    margin-bottom: 24px;
+    max-width: 25.625rem;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 24px 0;
+    padding-right: 16px;
+    border-right: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+
+    &--title {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      color: $WHITE;
+      font-size: 32px;
+      line-height: 38px;
+      font-weight: 700;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    &--description {
+      margin-top: 8px;
+      margin-bottom: 24px;
+      padding-left: 16px;
+      border-color: #ce3df3;
+      border-left-width: 1px;
+      border-left-style: solid;
+
+      color: $THEME_TEXT_SECONDARY;
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 400;
+      overflow: hidden;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .channel {
+      margin-bottom: 24px;
+
+      &__created-date {
+        font-size: 20px;
+        font-weight: 500;
+        color: $THEME_TEXT_TERTIARY;
+        padding: 12px;
+      }
+
+      &__domain {
+        font-size: 20px;
+        font-weight: 500;
+        color: $THEME_TEXT_TERTIARY;
+        padding: 12px;
+      }
+    }
+  }
+
+  &__aside {
+    min-width: 30%;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .aside {
+      &-box {
+        border: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+        padding: 12px;
+        border-radius: 16px;
+
+        &--title {
+          color: $THEME_TEXT_TERTIARY;
+        }
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        &--btn {
+          display: inline-flex;
+          gap: 12px;
+          align-items: center;
+          font-weight: 600;
+          color: $THEME_BG_BLACK;
+          background-color: $THEME_TEXT_PRIMARY;
+          padding: 12px;
+          border-radius: 12px;
+          cursor: pointer;
+          text-decoration: none;
+          font-size: 16px;
+          transition: ease 0.8s;
+
+          &:hover {
+            background-color: $THEME_TEXT_TERTIARY;
+          }
+        }
+      }
+
+      &__channel {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        border: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+        padding: 12px;
+        border-radius: 16px;
+
+        .channel__avatar {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            border: 1px solid $THEME_TEXT_TERTIARY;
+            border-radius: 50%;
+            height: 100%;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .channel__domain {
+          font-size: 16px;
+          font-weight: 700;
+          color: $WHITE;
+          text-decoration: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__recommend {
+        &--grid {
+          display: grid;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          margin-top: 16px;
+          gap: 12px;
+
+          .copy-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 8px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            .copy__icon {
+              padding: 8px;
+              transition: ease-in-out 0.2s;
+
+              &:hover {
+                background-color: $BUTTON_HOVER;
+                border-radius: 12px;
+              }
+            }
+
+            .copy__text {
+              color: $THEME_TEXT_TERTIARY;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      &__you-like {
+        .you-like__content {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          .post {
+            font-size: 16px;
+            color: $WHITE;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            display: block;
+            text-decoration: none;
+
+            &:hover {
+              cursor: pointer;
+              color: $THEME_TEXT_TERTIARY;
+            }
+          }
+        }
+      }
+    }
+  }
+}

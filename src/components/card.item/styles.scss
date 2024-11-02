@@ -1,0 +1,107 @@
+.post-card {
+  padding: 12px;
+  background-color: $WHITE;
+  border: 1px solid $THEME_TEXT_TERTIARY;
+  border-radius: 16px;
+  height: 100%;
+
+  &__header {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+
+    .header__favicon {
+      width: 40px;
+      height: 40px;
+
+      img {
+        border: 1px solid $THEME_TEXT_TERTIARY;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    &--btn {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      font-weight: 600;
+      color: $THEME_BG_BLACK;
+      background-color: $THEME_TEXT_PRIMARY;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 16px;
+      transition: ease 0.8s;
+
+      &:hover {
+        background-color: $THEME_TEXT_TERTIARY;
+      }
+    }
+  }
+
+  &__created-date {
+    font-size: 20px;
+    font-weight: 500;
+    color: $THEME_TEXT_TERTIARY;
+    padding: 12px;
+  }
+
+  &__domain {
+    font-size: 20px;
+    font-weight: 500;
+    color: $THEME_TEXT_TERTIARY;
+    padding: 12px;
+  }
+
+  &__content {
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    &--title {
+      padding: 0 12px;
+      margin-top: 20px;
+      color: $THEME_TEXT_PRIMARY;
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    &--image {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-height: fit-content;
+      height: auto;
+      pointer-events: none;
+
+      img {
+        width: 100%;
+        height: 160px;
+        border-radius: 12px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+}
