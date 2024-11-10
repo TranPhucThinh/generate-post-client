@@ -1,0 +1,109 @@
+.body {
+  background-color: $THEME_BG_BLACK;
+  margin-top: 64px;
+  padding: 24px 32px;
+  min-height: 100vh;
+
+  @media (max-width: 639px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__content {
+    .posts-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(280px, 320px));
+      grid-gap: 32px;
+      justify-content: center;
+
+      @media (max-width: 1600px) {
+        grid-template-columns: repeat(4, minmax(280px, 320px));
+      }
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, minmax(280px, 320px));
+      }
+
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, minmax(280px, 320px));
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(1, minmax(280px, 450px));
+        justify-content: center;
+      }
+
+      .post-card-container {
+        position: relative;
+
+        &:hover {
+          .post-card {
+            box-shadow: 0 0 0 0.5px $THEME_TEXT_TERTIARY;
+          }
+        }
+
+        &__button {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+
+        .post-card {
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          background-color: $THEME_BG_BLACK_LIGHT;
+          border: 1px solid color-mix(in srgb, $THEME_TEXT_TERTIARY, transparent 80%);
+          border-radius: 16px;
+          min-height: 286px;
+          max-height: 432px;
+          height: 100%;
+          transition: 0.3s;
+
+          @media (max-width: 768px) {
+            padding: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+
+    .loader {
+      position: absolute;
+      z-index: 10;
+      top: 40%;
+      left: 45%;
+      transform: translate((-50%, -50%));
+
+      margin: auto;
+      border: 20px solid $WHITE;
+      border-radius: 50%;
+      border-top: 20px solid $THEME_BG_BLACK;
+      width: 200px;
+      height: 200px;
+      animation: spinner 4s linear infinite;
+    }
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
